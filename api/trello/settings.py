@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-28u10556g%_d7yoye*a^tnh8n)&&!0p2j$wc6%(%obs1k5sx9v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cctrelloapp.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['cctrelloapp.herokuapp.com','127.0.0.1:8000','localhost']
 
 # Application definition
 
@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'dj_rest_auth.registration',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
     'trello_api'
 ]
 # REST_FRAMEWORK = {
@@ -53,6 +53,9 @@ INSTALLED_APPS = [
 #         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
 #     )
 # }
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
